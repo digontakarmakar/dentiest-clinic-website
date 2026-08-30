@@ -1,0 +1,741 @@
+/* ==========================================================================
+   SMILEORA DENTAL - PAGE STYLES & LAYOUTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 20%, rgba(93, 157, 150, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 10% 90%, rgba(205, 187, 145, 0.08) 0%, transparent 50%),
+              var(--bg-ivory);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-headline {
+  margin-bottom: var(--space-md);
+  color: var(--navy-deep);
+  font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+.hero-headline span.serif-accent {
+  font-style: italic;
+  color: var(--teal-muted);
+}
+
+.hero-subtext {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2xl);
+  max-width: 540px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.hero-trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trust-badge-icon {
+  color: var(--champagne);
+  display: flex;
+}
+
+.trust-badge-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  line-height: 1.3;
+}
+
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-canvas-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-float);
+  border: 1px solid rgba(221, 228, 225, 0.8);
+  background: linear-gradient(145deg, #FFFFFF, #F5F2EB);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.hero-floating-card {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  padding: 16px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 20;
+}
+
+.floating-avatar-group {
+  display: flex;
+}
+
+.floating-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-left: -10px;
+  object-fit: cover;
+}
+
+.floating-avatar:first-child {
+  margin-left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Trust Strip
+   -------------------------------------------------------------------------- */
+.trust-strip {
+  background: var(--surface-white);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 48px 0;
+}
+
+.trust-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: var(--border-color);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Introduction Split Section
+   -------------------------------------------------------------------------- */
+.intro-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.intro-image-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-float);
+  border: 1px solid var(--border-color);
+}
+
+.intro-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.intro-image-frame:hover img {
+  transform: scale(1.03);
+}
+
+.intro-experience-pill {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: var(--navy-deep);
+  color: var(--bg-ivory);
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.intro-bullet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 32px 0 40px;
+}
+
+.intro-bullet-card {
+  background: var(--surface-white);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-smooth);
+}
+
+.intro-bullet-card:hover {
+  border-color: var(--teal-muted);
+  transform: translateY(-3px);
+}
+
+.intro-bullet-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy-deep);
+  margin-bottom: 6px;
+}
+
+.intro-bullet-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Services Grid
+   -------------------------------------------------------------------------- */
+.services-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.service-card {
+  background: var(--surface-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal-muted);
+}
+
+.service-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.service-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 52, 59, 0.8);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.service-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card-number {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--champagne-dark);
+  margin-bottom: 8px;
+}
+
+.service-card-title {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--navy-deep);
+}
+
+.service-card-desc {
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.service-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+}
+
+.service-card-footer span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast);
+}
+
+.service-card:hover .service-card-footer span {
+  color: var(--teal-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Four Pillars (Why Smileora)
+   -------------------------------------------------------------------------- */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.pillar-card {
+  background: var(--surface-white);
+  padding: 36px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: all var(--transition-smooth);
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--champagne);
+  box-shadow: var(--shadow-card);
+}
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--champagne);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.pillar-title {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--navy-deep);
+}
+
+.pillar-desc {
+  font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   Dentist Team Grid
+   -------------------------------------------------------------------------- */
+.dentists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.dentist-card {
+  background: var(--surface-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.dentist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal-muted);
+}
+
+.dentist-photo-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--surface-cream);
+}
+
+.dentist-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.dentist-card:hover .dentist-photo-wrap img {
+  transform: scale(1.06);
+}
+
+.dentist-card-body {
+  padding: 24px;
+  text-align: center;
+}
+
+.dentist-name {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+  color: var(--navy-deep);
+}
+
+.dentist-role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--teal-muted);
+  margin-bottom: 12px;
+}
+
+.dentist-exp-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  background: var(--bg-ivory);
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Testimonials & Patient Stories
+   -------------------------------------------------------------------------- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.review-card {
+  background: var(--surface-white);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-smooth);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne);
+  box-shadow: var(--shadow-card);
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+  color: #D4AF37;
+  margin-bottom: 16px;
+}
+
+.review-quote {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--navy-deep);
+  line-height: 1.4;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.review-detail {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy-deep);
+}
+
+.author-treatment {
+  font-size: 0.8rem;
+  color: var(--teal-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Appointment Wizard
+   -------------------------------------------------------------------------- */
+.booking-wizard-card {
+  background: var(--surface-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-float);
+  padding: 48px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.wizard-steps-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.wizard-step-bubble {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: var(--bg-ivory);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  z-index: 2;
+  transition: all var(--transition-smooth);
+}
+
+.wizard-step-bubble.active {
+  background: var(--navy-deep);
+  color: var(--bg-ivory);
+  border-color: var(--navy-deep);
+  box-shadow: 0 4px 14px rgba(18, 52, 59, 0.3);
+}
+
+.wizard-step-bubble.completed {
+  background: var(--teal-muted);
+  color: #FFFFFF;
+  border-color: var(--teal-muted);
+}
+
+.wizard-option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+.wizard-option-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  background: var(--surface-white);
+  transition: all var(--transition-smooth);
+  text-align: left;
+}
+
+.wizard-option-card:hover {
+  border-color: var(--teal-muted);
+  transform: translateY(-2px);
+}
+
+.wizard-option-card.selected {
+  border-color: var(--navy-deep);
+  background: var(--bg-ivory-light);
+  box-shadow: 0 4px 16px rgba(18, 52, 59, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--surface-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--teal-muted);
+  box-shadow: 0 0 0 3px var(--teal-subtle);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .hero-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-trust-badges {
+    justify-content: center;
+  }
+  .intro-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dentists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .dentists-grid {
+    grid-template-columns: 1fr;
+  }
+  .intro-bullet-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .booking-wizard-card {
+    padding: 24px 16px;
+  }
+  .stat-number {
+    font-size: 2.3rem;
+  }
+  .hero-canvas-container {
+    max-width: 100%;
+  }
+  .hero-floating-card {
+    position: static;
+    margin-top: 16px;
+  }
+}
