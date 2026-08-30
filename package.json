@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://github.com/digontakarmakar.github.io/dentiest-clinic-website/",
+  "homepage": "https://digontakarmakar.github.io/dentiest-clinic-website/",
   "dependencies": {
     "canvas-confetti": "^1.9.4",
     "lucide-react": "^1.37.0",
