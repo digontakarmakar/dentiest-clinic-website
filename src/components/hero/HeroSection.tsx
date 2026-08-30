@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Calendar, ArrowRight, ShieldCheck, Sparkles, Star, Eye } from 'lucide-react';
-import { Button } from '../common/Button';
-import { Hero3DCanvas } from './Hero3DCanvas';
+import React, { useState, useEffect } from "react";
+import {
+  Calendar,
+  ArrowRight,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Eye,
+} from "lucide-react";
+import { Button } from "../common/Button";
+import { Hero3DCanvas } from "./Hero3DCanvas";
+import { imageUrl } from "../../utils/imagePaths";
 
 export const HeroSection: React.FC = () => {
-  const [visualMode, setVisualMode] = useState<'3d' | 'photo'>('3d');
+  const [visualMode, setVisualMode] = useState<"3d" | "photo">("3d");
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -14,8 +22,8 @@ export const HeroSection: React.FC = () => {
       setScrollProgress(Math.min(scrollY / heroHeight, 1));
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -28,35 +36,55 @@ export const HeroSection: React.FC = () => {
             style={{
               transform: `translateY(${scrollProgress * 40}px)`,
               opacity: 1 - scrollProgress * 0.65,
-              transition: 'transform 0.1s ease-out, opacity 0.1s ease-out'
+              transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
             {/* Phase 1: Eyebrow Label */}
             <div className="eyebrow-label animate-fade-down">
-              <Sparkles size={14} color="var(--champagne-dark)" /> Luxury Dental Studio • Beverly Hills
+              <Sparkles size={14} color="var(--champagne-dark)" /> Luxury Dental
+              Studio • Beverly Hills
             </div>
 
             {/* Phase 2 & 3: Masked Line-by-Line Headline Reveal (Apple/Luxury Product Style) */}
-            <h1 className="hero-headline" style={{ marginBottom: 'var(--space-md)' }}>
+            <h1
+              className="hero-headline"
+              style={{ marginBottom: "var(--space-md)" }}
+            >
               <span className="reveal-mask">
-                <span className="reveal-line delay-100">Precision Dentistry.</span>
+                <span className="reveal-line delay-100">
+                  Precision Dentistry.
+                </span>
               </span>
               <span className="reveal-mask">
-                <span className="reveal-line delay-300 serif-accent">Beautifully Personal.</span>
+                <span className="reveal-line delay-300 serif-accent">
+                  Beautifully Personal.
+                </span>
               </span>
             </h1>
 
             {/* Phase 4: Supporting Paragraph */}
             <p className="hero-subtext animate-fade-up delay-400">
-              Advanced dental care designed around your comfort, confidence, and long-term smile. Combining 3D digital smile design with anxiety-free biological dentistry.
+              Advanced dental care designed around your comfort, confidence, and
+              long-term smile. Combining 3D digital smile design with
+              anxiety-free biological dentistry.
             </p>
 
             {/* Phase 5: Primary Action Buttons */}
             <div className="hero-actions animate-fade-up delay-500">
-              <Button to="/appointment" variant="primary" size="lg" icon={<Calendar size={18} />}>
+              <Button
+                to="/appointment"
+                variant="primary"
+                size="lg"
+                icon={<Calendar size={18} />}
+              >
                 Book an Appointment
               </Button>
-              <Button to="/services" variant="secondary" size="lg" icon={<ArrowRight size={18} />}>
+              <Button
+                to="/services"
+                variant="secondary"
+                size="lg"
+                icon={<ArrowRight size={18} />}
+              >
                 Explore Our Services
               </Button>
             </div>
@@ -68,7 +96,8 @@ export const HeroSection: React.FC = () => {
                   <Star size={18} fill="#D4AF37" color="#D4AF37" />
                 </div>
                 <div className="trust-badge-text">
-                  <strong>4.98 / 5.0 Rating</strong><br />
+                  <strong>4.98 / 5.0 Rating</strong>
+                  <br />
                   <span>500+ Verified Patient Reviews</span>
                 </div>
               </div>
@@ -78,7 +107,8 @@ export const HeroSection: React.FC = () => {
                   <ShieldCheck size={20} color="var(--teal-muted)" />
                 </div>
                 <div className="trust-badge-text">
-                  <strong>Swiss-Engineered</strong><br />
+                  <strong>Swiss-Engineered</strong>
+                  <br />
                   <span>Guided Biofilm Protocol</span>
                 </div>
               </div>
@@ -91,75 +121,81 @@ export const HeroSection: React.FC = () => {
               {/* Visual Mode Switcher Pill */}
               <div
                 style={{
-                  position: 'absolute',
-                  top: '16px',
-                  right: '16px',
+                  position: "absolute",
+                  top: "16px",
+                  right: "16px",
                   zIndex: 30,
-                  display: 'flex',
-                  background: 'rgba(255, 255, 255, 0.88)',
-                  backdropFilter: 'blur(16px)',
-                  borderRadius: 'var(--radius-pill)',
-                  padding: '4px',
-                  border: '1px solid var(--border-color)',
-                  boxShadow: 'var(--shadow-subtle)'
+                  display: "flex",
+                  background: "rgba(255, 255, 255, 0.88)",
+                  backdropFilter: "blur(16px)",
+                  borderRadius: "var(--radius-pill)",
+                  padding: "4px",
+                  border: "1px solid var(--border-color)",
+                  boxShadow: "var(--shadow-subtle)",
                 }}
               >
                 <button
-                  onClick={() => setVisualMode('3d')}
+                  onClick={() => setVisualMode("3d")}
                   style={{
-                    padding: '6px 14px',
-                    borderRadius: 'var(--radius-pill)',
-                    fontSize: '0.75rem',
+                    padding: "6px 14px",
+                    borderRadius: "var(--radius-pill)",
+                    fontSize: "0.75rem",
                     fontWeight: 600,
-                    background: visualMode === '3d' ? 'var(--navy-deep)' : 'transparent',
-                    color: visualMode === '3d' ? '#FFFFFF' : 'var(--navy-deep)',
-                    transition: 'all var(--transition-fast)'
+                    background:
+                      visualMode === "3d" ? "var(--navy-deep)" : "transparent",
+                    color: visualMode === "3d" ? "#FFFFFF" : "var(--navy-deep)",
+                    transition: "all var(--transition-fast)",
                   }}
                 >
                   3D Interactive Sculpture
                 </button>
                 <button
-                  onClick={() => setVisualMode('photo')}
+                  onClick={() => setVisualMode("photo")}
                   style={{
-                    padding: '6px 14px',
-                    borderRadius: 'var(--radius-pill)',
-                    fontSize: '0.75rem',
+                    padding: "6px 14px",
+                    borderRadius: "var(--radius-pill)",
+                    fontSize: "0.75rem",
                     fontWeight: 600,
-                    background: visualMode === 'photo' ? 'var(--navy-deep)' : 'transparent',
-                    color: visualMode === 'photo' ? '#FFFFFF' : 'var(--navy-deep)',
-                    transition: 'all var(--transition-fast)'
+                    background:
+                      visualMode === "photo"
+                        ? "var(--navy-deep)"
+                        : "transparent",
+                    color:
+                      visualMode === "photo" ? "#FFFFFF" : "var(--navy-deep)",
+                    transition: "all var(--transition-fast)",
                   }}
                 >
                   Editorial Smile
                 </button>
               </div>
 
-              {visualMode === '3d' ? (
+              {visualMode === "3d" ? (
                 <>
                   <Hero3DCanvas />
                   <div
                     style={{
-                      position: 'absolute',
-                      bottom: '16px',
-                      left: '20px',
+                      position: "absolute",
+                      bottom: "16px",
+                      left: "20px",
                       zIndex: 25,
-                      fontSize: '0.75rem',
-                      color: 'var(--text-muted)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      background: 'rgba(255, 255, 255, 0.7)',
-                      padding: '4px 12px',
-                      borderRadius: 'var(--radius-pill)',
-                      backdropFilter: 'blur(8px)'
+                      fontSize: "0.75rem",
+                      color: "var(--text-muted)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      background: "rgba(255, 255, 255, 0.7)",
+                      padding: "4px 12px",
+                      borderRadius: "var(--radius-pill)",
+                      backdropFilter: "blur(8px)",
                     }}
                   >
-                    <Eye size={12} color="var(--teal-muted)" /> Interactive 3D • Cursor & Scroll Parallax
+                    <Eye size={12} color="var(--teal-muted)" /> Interactive 3D •
+                    Cursor & Scroll Parallax
                   </div>
                 </>
               ) : (
                 <img
-                  src="/images/hero-smile.jpg"
+                  src={imageUrl("hero-smile.jpg")}
                   alt="Smileora signature natural smile"
                   className="hero-image-overlay"
                 />
@@ -169,34 +205,53 @@ export const HeroSection: React.FC = () => {
             {/* Floating Clinical Team Card */}
             <div className="hero-floating-card animate-fade-up delay-700">
               <div className="floating-avatar-group">
-                <img src="/images/dr-elena.jpg" alt="Dr. Elena Vance" className="floating-avatar" />
-                <img src="/images/dr-marcus.jpg" alt="Dr. Marcus Chen" className="floating-avatar" />
+                <img
+                  src={imageUrl("dr-elena.jpg")}
+                  alt="Dr. Elena Vance"
+                  className="floating-avatar"
+                />
+                <img
+                  src={imageUrl("dr-marcus.jpg")}
+                  alt="Dr. Marcus Chen"
+                  className="floating-avatar"
+                />
                 <div
                   className="floating-avatar"
                   style={{
-                    background: 'var(--champagne)',
-                    color: 'var(--navy-deep)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '0.7rem',
-                    fontWeight: 700
+                    background: "var(--champagne)",
+                    color: "var(--navy-deep)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "0.7rem",
+                    fontWeight: 700,
                   }}
                 >
                   +3
                 </div>
               </div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--navy-deep)' }}>
+                <div
+                  style={{
+                    fontWeight: 700,
+                    fontSize: "0.9rem",
+                    color: "var(--navy-deep)",
+                  }}
+                >
                   Master Clinical Team
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--teal-muted)', fontWeight: 600 }}>
+                <div
+                  style={{
+                    fontSize: "0.78rem",
+                    color: "var(--teal-muted)",
+                    fontWeight: 600,
+                  }}
+                >
                   Harvard & Columbia Fellowship Directors
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
