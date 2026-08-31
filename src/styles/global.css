@@ -2,10 +2,12 @@
    SMILEORA DENTAL - GLOBAL STYLES & RESET
    ========================================================================== */
 
-@import './variables.css';
-@import './animations.css';
+@import "./variables.css";
+@import "./animations.css";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,7 +32,12 @@ body {
 }
 
 /* Typography Defaults */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 500;
   line-height: 1.15;
@@ -66,13 +73,17 @@ a {
   transition: color var(--transition-fast);
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   outline: none;
@@ -82,6 +93,23 @@ button, input, select, textarea {
 button {
   cursor: pointer;
   background: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  .container,
+  .container-narrow,
+  .container-wide {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }
 
 /* Layout Utilities */
@@ -120,7 +148,10 @@ button {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-subtle);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
 }
 
 .luxury-card:hover {
@@ -148,7 +179,7 @@ button {
 .section-dark h2,
 .section-dark h3,
 .section-dark h4 {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .section-dark p {
@@ -170,7 +201,7 @@ button {
 }
 
 .eyebrow-label::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 18px;
   height: 1px;

@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Calendar,
   ArrowRight,
   ShieldCheck,
   Sparkles,
   Star,
-  Eye,
 } from "lucide-react";
 import { Button } from "../common/Button";
-import { Hero3DCanvas } from "./Hero3DCanvas";
 import { imageUrl } from "../../utils/imagePaths";
 
 export const HeroSection: React.FC = () => {
-  const [visualMode, setVisualMode] = useState<"3d" | "photo">("3d");
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [scrollProgress, setScrollProgress] = React.useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,91 +112,14 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Hero Visual — 3D Sculptural Presentation */}
+          {/* Right Hero Visual — Static Editorial Photo */}
           <div className="hero-visual-wrapper animate-scale-up delay-300">
             <div className="hero-canvas-container">
-              {/* Visual Mode Switcher Pill */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "16px",
-                  right: "16px",
-                  zIndex: 30,
-                  display: "flex",
-                  background: "rgba(255, 255, 255, 0.88)",
-                  backdropFilter: "blur(16px)",
-                  borderRadius: "var(--radius-pill)",
-                  padding: "4px",
-                  border: "1px solid var(--border-color)",
-                  boxShadow: "var(--shadow-subtle)",
-                }}
-              >
-                <button
-                  onClick={() => setVisualMode("3d")}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: "var(--radius-pill)",
-                    fontSize: "0.75rem",
-                    fontWeight: 600,
-                    background:
-                      visualMode === "3d" ? "var(--navy-deep)" : "transparent",
-                    color: visualMode === "3d" ? "#FFFFFF" : "var(--navy-deep)",
-                    transition: "all var(--transition-fast)",
-                  }}
-                >
-                  3D Interactive Sculpture
-                </button>
-                <button
-                  onClick={() => setVisualMode("photo")}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: "var(--radius-pill)",
-                    fontSize: "0.75rem",
-                    fontWeight: 600,
-                    background:
-                      visualMode === "photo"
-                        ? "var(--navy-deep)"
-                        : "transparent",
-                    color:
-                      visualMode === "photo" ? "#FFFFFF" : "var(--navy-deep)",
-                    transition: "all var(--transition-fast)",
-                  }}
-                >
-                  Editorial Smile
-                </button>
-              </div>
-
-              {visualMode === "3d" ? (
-                <>
-                  <Hero3DCanvas />
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "16px",
-                      left: "20px",
-                      zIndex: 25,
-                      fontSize: "0.75rem",
-                      color: "var(--text-muted)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      background: "rgba(255, 255, 255, 0.7)",
-                      padding: "4px 12px",
-                      borderRadius: "var(--radius-pill)",
-                      backdropFilter: "blur(8px)",
-                    }}
-                  >
-                    <Eye size={12} color="var(--teal-muted)" /> Interactive 3D •
-                    Cursor & Scroll Parallax
-                  </div>
-                </>
-              ) : (
-                <img
-                  src={imageUrl("hero-smile.jpg")}
-                  alt="Smileora signature natural smile"
-                  className="hero-image-overlay"
-                />
-              )}
+              <img
+                src={imageUrl("dr-marcus.jpg")}
+                alt="Doctor portrait in Smileora clinic"
+                className="hero-image-overlay"
+              />
             </div>
 
             {/* Floating Clinical Team Card */}
